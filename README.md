@@ -17,9 +17,7 @@ If the image is classified as the Boss, it will monitor changes.
 ## Requirements
 
 * WebCamera
-* Python3.5
-* OSX
-* Anaconda
+* Python 3.9+
 * Lots of images of your boss and other person image
 
 Put images into [data/boss](https://github.com/Hironsan/BossSensor/tree/master/data/boss) and [data/other](https://github.com/Hironsan/BossSensor/tree/master/data/other).
@@ -39,17 +37,21 @@ $ python camera_reader.py
 ```
 
 ## Install
-Install OpenCV, PyQt4, Anaconda.
 
 ```
-conda create -n venv python=3.5
-source activate venv
-conda install -c https://conda.anaconda.org/menpo opencv3
-conda install -c conda-forge tensorflow
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Change Keras backend from Theano to TensorFlow. 
+The trained model is saved to `store/model.keras`. While the boss screen is shown, press any key or click to close it and resume monitoring.
+
+## Test
+
+```
+pip install pytest
+python -m pytest tests
+```
 
 ## Licence
 
